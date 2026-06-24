@@ -1,0 +1,14 @@
+{
+  "peliculas": [
+    {
+      "titulo": "Arrival",
+      "year": 2016,
+      "rating": 8.0
+    },
+    {
+      "titulo": "Dune",
+      "year": 2021,
+      "rating": 8.0
+    }
+  ]
+}
