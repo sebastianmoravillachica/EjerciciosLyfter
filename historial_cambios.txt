@@ -1,0 +1,3 @@
+El 23 de Junio se  creo el repositorio en donde podemos encontrar un commit hecho automaticamente por git hub
+que es el README, tambien podemos visualizar el commit hecho para que fuera aprobado por el pull request con el number uploading first exercises
+para el dia 24 de Junio se puede visualizar el merge completo hacia main.
