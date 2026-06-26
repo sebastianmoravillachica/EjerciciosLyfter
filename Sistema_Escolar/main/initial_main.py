@@ -20,7 +20,7 @@ def main():
                 print(f"\nLa opcion que digitaste ( {user_option} ) no se encuentra dentro del menu, intentemos de nuevo.")
         except ValueError as error:
             print(error)
-            main()
+            
             
 if __name__ == "__main__":
     main()

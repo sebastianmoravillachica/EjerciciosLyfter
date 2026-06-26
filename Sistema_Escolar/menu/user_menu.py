@@ -1,6 +1,10 @@
 from actions.register_student import register_student
-from data.load_all_students import load_student_on_file
-from data.load_top_3_students import load_students
+from actions.load_all_students import load_student_on_file
+from actions.load_top_3_students import load_students_top
+from actions.load_students_average import load_average_by_student
+from data.export_students_csv import export_students
+from data.import_students_csv import import_students
+
 
 def menu():
     while True:
@@ -20,12 +24,18 @@ def menu():
             elif user_menu_option == 2:
                 load_student_on_file()
             elif user_menu_option ==3:
-                load_students()
+                load_students_top()
+            elif user_menu_option ==4:
+                load_average_by_student() 
+            elif user_menu_option==5:
+                export_students()
+            elif user_menu_option==6:
+                import_students()
+            elif user_menu_option ==7:
+                return
+            else:
+                print(f"\nNumero {user_menu_option}  fuera del rango digite un numero del 1 al 7")
 
-                
         except ValueError:
             print(f"\nPorfavor digite un numero del 1 al 7.")
-            menu()
-    
-        
-        
+            
