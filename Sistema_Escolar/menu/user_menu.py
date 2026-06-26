@@ -20,7 +20,8 @@ def menu():
         try:
             user_menu_option=int(input("\nDigite la opcion del menu que desea realizar: "))
             if user_menu_option == 1:
-                register_student()
+                data_path='data\students.csv'   
+                register_student(data_path)
             elif user_menu_option == 2:
                 load_student_on_file()
             elif user_menu_option ==3:
