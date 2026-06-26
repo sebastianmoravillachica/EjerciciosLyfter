@@ -4,7 +4,7 @@ import os #sistema operativo
 def register_student(path):
     while True:
         try:
-            students_count=int(input("\nDigite la cantidad de estudiantes que desea ingresar: \n"))
+            students_count=int(input("\nDigite la cantidad de estudiantes que desea ingresar:"))
             with open (path, 'a', encoding='utf-8', newline='') as file:
                 
                 field_names=['Full name','Section','Spanish grade','English grade','Social studies grade', 'Science grade']
@@ -113,4 +113,4 @@ def register_student(path):
                     
 
         except ValueError:
-            print("Porfavor digit solo numeros")
+            print("Porfavor digite solo numeros")
