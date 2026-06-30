@@ -13,8 +13,10 @@ def main():
             if user_option =="si":
                 menu()
             elif user_option == "no":
+                print("\n-----------------------------------------------")
                 print("Te esperamos pronto")
                 print("Adios!!")
+                print("-----------------------------------------------")
                 break
             else:
                 print(f"\nLa opcion que digitaste ( {user_option} ) no se encuentra dentro del menu, intentemos de nuevo.")

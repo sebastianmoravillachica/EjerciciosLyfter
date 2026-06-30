@@ -1,2 +1,5 @@
-def load_students_top():
-    print("Estudiantes")
+import csv
+
+def load_students_top(path):
+    print("Top 3")
+            

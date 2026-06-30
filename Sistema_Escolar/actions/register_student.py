@@ -7,7 +7,7 @@ def register_student(path):
             students_count=int(input("\nDigite la cantidad de estudiantes que desea ingresar:"))
             with open (path, 'a', encoding='utf-8', newline='') as file:
                 
-                field_names=['Full name','Section','Spanish grade','English grade','Social studies grade', 'Science grade']
+                field_names=['Full_name','Section','Spanish_grade','English_grade','Social_studies_grade', 'Science_grade']
                 
                 writer=csv.DictWriter(file,fieldnames=field_names,delimiter='|')
                 
@@ -99,12 +99,12 @@ def register_student(path):
                                 print("\nPor favor digite una nota válida.\n")    
 
                     writer.writerow({
-                        'Full name':full_name,
+                        'Full_name':full_name,
                         'Section':section,
-                        'Spanish grade':spanish_grade,
-                        'English grade': english_grade,
-                        'Social studies grade':social_studies_grade,
-                        'Science grade':science_grade
+                        'Spanish_grade':spanish_grade,
+                        'English_grade': english_grade,
+                        'Social_studies_grade':social_studies_grade,
+                        'Science_grade':science_grade
                     })
                 
             
