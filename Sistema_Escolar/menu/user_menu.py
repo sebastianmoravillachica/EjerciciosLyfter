@@ -8,7 +8,7 @@ from data.import_students_csv import import_students
 
 def menu():
     while True:
-        
+        data_path='data\students.' 
         print("\n---- Menu ----\n")
         print("1- Para registrar estudiante.")
         print("2- Ver estudiantes.")
@@ -20,14 +20,13 @@ def menu():
         try:
             user_menu_option=int(input("\nDigite la opcion del menu que desea realizar: "))
             if user_menu_option == 1:
-                data_path='data\students.csv'   
                 register_student(data_path)
             elif user_menu_option == 2:
-                load_student_on_file()
+                load_student_on_file(data_path)
             elif user_menu_option ==3:
-                load_students_top()
+                load_students_top(data_path)
             elif user_menu_option ==4:
-                load_average_by_student() 
+                load_average_by_student()
             elif user_menu_option==5:
                 export_students()
             elif user_menu_option==6:
