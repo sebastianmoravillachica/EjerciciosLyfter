@@ -1,6 +1,6 @@
 from actions.register_student import register_student
 from actions.load_all_students import load_student_on_file
-from actions.load_top_3_students import load_students_top
+from actions.load_top_3_students import read_student_csv
 from actions.load_students_average import load_average_by_student
 from data.export_students_csv import export_students
 from data.import_students_csv import import_students
@@ -24,7 +24,7 @@ def menu():
             elif user_menu_option == 2:
                 load_student_on_file(data_path)
             elif user_menu_option ==3:
-                load_students_top(data_path)
+                read_student_csv(data_path)
             elif user_menu_option ==4:
                 load_average_by_student()
             elif user_menu_option==5:
