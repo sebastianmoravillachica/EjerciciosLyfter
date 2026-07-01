@@ -16,7 +16,7 @@ def menu():
         print("4- Ver el promedio de todos los estudiantes.")
         print("5- Exportar datos, estilo CSV")
         print("6- Importar datos a CSV")
-        print("7- Para salir")
+        print("7- Salir")
         try:
             user_menu_option=int(input("\nDigite la opcion del menu que desea realizar: "))
             if user_menu_option == 1:
@@ -26,7 +26,11 @@ def menu():
             elif user_menu_option ==3:
                 read_student_csv(data_path)
             elif user_menu_option ==4:
+<<<<<<< HEAD
                 load_all_students()
+=======
+                load_all_students(data_path)
+>>>>>>> creacion-sistema-escolar
             elif user_menu_option==5:
                 export_students()
             elif user_menu_option==6:

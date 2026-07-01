@@ -33,7 +33,7 @@ def register_student(path):
                                 if name.isdigit():
                                     raise ValueError ("\nEl nombre del estudiante no puede llevar numeros\n")
                             break
-                        
+
                         except ValueError as error:
                             print(error)
                             
@@ -49,6 +49,7 @@ def register_student(path):
                             break
                         except ValueError as error:
                             print(error)
+                            
                             
                     #SPANICH GRADE
                     while True:
