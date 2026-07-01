@@ -1,7 +1,5 @@
 import csv
 
-def load_all_students(path):import csv
-
 def load_all_students(path):
 
     student_list = []
