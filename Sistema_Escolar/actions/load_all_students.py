@@ -1,8 +1,6 @@
 import csv
 
-
 def load_student_on_file(path):
-    
     with open(path,'r', encoding='utf-8') as file:
         
         students=csv.DictReader(file,delimiter='|')
