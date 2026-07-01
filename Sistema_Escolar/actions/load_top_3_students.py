@@ -59,3 +59,5 @@ def show_top_3(average_list):
 
         print(f"{position + 1}. Nombre: {average_list[position]['student_name']}")
         print(f"   Promedio: {average_list[position]['grade_average']:.2f}\n")
+        
+    
