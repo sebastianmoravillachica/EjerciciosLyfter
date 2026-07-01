@@ -1,5 +1,6 @@
 import csv
 
+
 def get_list_of_students(path):
 
     student_list = []
@@ -26,14 +27,30 @@ def delete_student_by_name_and_section(student_list, path):
 
         if student_name == student['Full_name'].lower() and student_section == student['Section'].upper():
 
-            student_list.remove(student)
-            student_found = True
+            print("\n------ ESTUDIANTE ENCONTRADO ------")
+            print(f"Nombre: {student['Full_name']}")
+            print(f"Sección: {student['Section']}")
+            print("-----------------------------------")
+
+            confirm_delete = input("\n¿Desea eliminar este estudiante? (SI/NO): ").strip().upper()
+
+            if confirm_delete == "SI":
+                student_list.remove(student)
+                student_found = True
+                print("\nEstudiante eliminado correctamente.")
+
+            elif confirm_delete == "NO":
+                print("\nOperación cancelada.")
+
+            else:
+                print("\nOpción inválida. Operación cancelada.")
+
             break
 
     if student_found:
         save_student_list(path, student_list)
-        print("\nEstudiante eliminado correctamente.")
-    else:
+
+    elif not student_found:
         print("\nNo se encontró un estudiante con ese nombre y sección.")
 
 
