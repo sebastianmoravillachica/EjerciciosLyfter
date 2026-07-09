@@ -5,6 +5,7 @@ from actions.load_students_average import load_all_students
 from data.export_students_csv import export_students
 from data.import_students_csv import import_students
 from actions.delete_student import get_list_of_students
+from actions.students_who_failed import read_students
 
 
 def menu():
@@ -18,7 +19,8 @@ def menu():
         print("5- Exportar datos, estilo CSV")
         print("6- Importar datos a CSV")
         print("7- Eliminar estudiante")
-        print("8- Salir")
+        print("8- Mostrar estudiantes reprobados o al menos una materia")
+        print("9- Salir")
         try:
             user_menu_option=int(input("\nDigite la opcion del menu que desea realizar: "))
             if user_menu_option == 1:
@@ -36,6 +38,8 @@ def menu():
             elif user_menu_option ==7:
                 get_list_of_students(data_path)
             elif user_menu_option ==8:
+                read_students(data_path)
+            elif user_menu_option ==9:
                 return
             else:
                 print(f"\nNumero {user_menu_option}  fuera del rango digite un numero del 1 al 7")
