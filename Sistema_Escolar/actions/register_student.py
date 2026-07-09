@@ -1,6 +1,6 @@
 import csv
 import os #sistema operativo
-
+import re
 def register_student(path):
     while True:
         try:
@@ -39,18 +39,24 @@ def register_student(path):
                             
                     #SECTION
                     while True:
+                        
                         try:
-                            section=input("\nDigite la seccion del estudiante, por ejemplo (11B):").strip().lower()
                             
-                            if section =="" :
-                                    raise ValueError ("\nEspacio obligatorio, por favor digite la seccion del estudiante!\n")
-                            if section.isdigit():
-                                    raise ValueError ("\nLa seccion del estudiante no puede ser un numero \n")
+                            section = input("\nDigite la sección del estudiante, por ejemplo (11B): ").strip().upper()
+
+                            if section == "":
+                                raise ValueError("\nEspacio obligatorio, por favor digite la sección del estudiante.\n")
+
+                            if not re.fullmatch(r"\d{1,2}[A-Z]", section):
+                                raise ValueError("\nFormato incorrecto. Debe ingresar la sección como por ejemplo: 7A, 10B o 11C.\n")
+
                             break
+                        
                         except ValueError as error:
+                            
                             print(error)
                             
-                            
+                    
                     #SPANICH GRADE
                     while True:
                         spanish_grade=input("\nDigite la nota de Español del estudiante:").strip()
