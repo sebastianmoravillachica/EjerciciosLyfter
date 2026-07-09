@@ -1,2 +1,3 @@
 python -B -m main.initial_main --- Comando para poder correr el proyecto
 
+Proyecto finalizado
