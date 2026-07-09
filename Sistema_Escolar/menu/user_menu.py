@@ -28,11 +28,7 @@ def menu():
             elif user_menu_option ==3:
                 read_student_csv(data_path)
             elif user_menu_option ==4:
-<<<<<<< HEAD
-                load_all_students()
-=======
                 load_all_students(data_path)
->>>>>>> creacion-sistema-escolar
             elif user_menu_option==5:
                 export_students()
             elif user_menu_option==6:
