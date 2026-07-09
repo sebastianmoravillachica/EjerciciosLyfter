@@ -6,6 +6,8 @@ from data.export_students_csv import export_students
 from data.import_students_csv import import_students
 from actions.delete_student import get_list_of_students
 from actions.students_who_failed import read_students
+from data.export_students_csv import export_students
+from data.import_students_csv import import_students
 
 
 def menu():
