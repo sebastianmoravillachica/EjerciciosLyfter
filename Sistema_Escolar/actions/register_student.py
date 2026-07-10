@@ -98,7 +98,9 @@ def register_student(path):
                             print("\nLa nota no puede estar vacía.\n")
                         else:
                             try:
-                                spanish_grade = float(spanish_grade)
+                                if not re.fullmatch(r"(100|[1-9]?\d)", spanish_grade):
+                                    raise ValueError("\nNota fuera del rango, dijite una nota entre 0 a 100\n")
+                                spanish_grade = int(spanish_grade)
                                 break
                             except ValueError:
                                 print("\nPor favor digite una nota válida.\n")
@@ -111,7 +113,11 @@ def register_student(path):
                             print("\nLa nota no puede estar vacía.\n")
                         else:
                             try:
-                                english_grade = float(english_grade)
+                                if not re.fullmatch(r"(100|[1-9]?\d)", english_grade):
+                                    raise ValueError("\nNota fuera del rango, dijite una nota entre 0 a 100\n")
+                                
+                                english_grade = int(english_grade)
+                                
                                 break
                             except ValueError:
                                 print("\nPor favor digite una nota válida.\n")
@@ -124,7 +130,11 @@ def register_student(path):
                             print("\nLa nota no puede estar vacía.\n")
                         else:
                             try:
-                                social_studies_grade = float(social_studies_grade)
+                                if not re.fullmatch(r"(100|[1-9]?\d)", social_studies_grade):
+                                    raise ValueError("\nNota fuera del rango, dijite una nota entre 0 a 100\n")
+                                
+                                social_studies_grade = int(social_studies_grade)
+
                                 break
                             except ValueError:
                                 print("\nPor favor digite una nota válida.\n")
@@ -137,7 +147,12 @@ def register_student(path):
                             print("\nLa nota no puede estar vacía.\n")
                         else:
                             try:
-                                science_grade = float(science_grade)
+                                
+                                if not re.fullmatch(r"(100|[1-9]?\d)", science_grade):
+                                    raise ValueError("\nNota fuera del rango, dijite una nota entre 0 a 100\n")
+                                
+                                science_grade = int(science_grade)
+                                
                                 break
                             except ValueError:
                                 print("\nPor favor digite una nota válida.\n")

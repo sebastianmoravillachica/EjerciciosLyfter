@@ -19,13 +19,13 @@ def show_student_who_failed(student_list):
         
         failed_subjects = []
         
-        if float(student['Spanish_grade']) <= 60:
+        if int(student['Spanish_grade']) < 60:
             failed_subjects.append(f"Español: {student['Spanish_grade']}")
-        if float(student['English_grade']) <= 60:
+        if int(student['English_grade']) < 60:
             failed_subjects.append(f"Inglés: {student['English_grade']}")
-        if float(student['Social_studies_grade']) <= 60:
+        if int(student['Social_studies_grade']) < 60:
             failed_subjects.append(f"Estudios Sociales: {student['Social_studies_grade']}")
-        if float(student['Science_grade'])  <= 60:
+        if int(student['Science_grade'])  < 60:
             failed_subjects.append(f"Ciencias: {student['Science_grade']}")
             
         

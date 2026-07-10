@@ -8,11 +8,13 @@ from actions.delete_student import get_list_of_students
 from actions.students_who_failed import read_students
 from data.export_students_csv import export_students
 from data.import_students_csv import import_students
+from actions.average import calculate_average
+
 
 
 def menu():
     while True:
-        data_path='data\students.csv' 
+        data_path='data/students.csv' 
         print("\n---- Menu ----\n")
         print("1- Para registrar estudiante.")
         print("2- Ver estudiantes.")
@@ -47,5 +49,5 @@ def menu():
                 print(f"\nNumero {user_menu_option}  fuera del rango digite un numero del 1 al 7")
 
         except ValueError:
-            print(f"\nPorfavor digite un numero del 1 al 7.")
+            print(f"\nPorfavor digite un numero del 1 al 9.")
             
