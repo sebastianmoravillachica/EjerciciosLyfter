@@ -4,11 +4,11 @@
 
 class CircleAreaCalculator:
     
-    radius=8
     
-    def get_area(self):
+    def get_area(self,radius):
         
         pi=3.14159
+        self.radius=radius
         circle_area=pi*pow(self.radius,2)
         return circle_area
     
@@ -16,7 +16,7 @@ class CircleAreaCalculator:
     
 circle=CircleAreaCalculator()
 
-print(circle.get_area())
+print(circle.get_area(8))
 
 
 #Cree una clase de Bus con:
@@ -85,6 +85,8 @@ my_bus.let_passenger_off()
 #Feet
 #Ahora cree una clase de Human y conecte todas las clases de manera lógica por medio de atributos.
 #Por ejemplo (este código esta incompleto, pero describe la idea):
+
+
 """
 class Torso:
 	def __init__(self, head, right_arm, ...):
