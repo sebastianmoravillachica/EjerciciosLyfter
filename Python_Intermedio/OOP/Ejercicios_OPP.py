@@ -18,12 +18,10 @@ circle=CircleAreaCalculator()
 
 print(circle.get_area(8))
 
-
 #Cree una clase de Bus con:
 #Un atributo de max_passengers.
 #Un método para agregar pasajeros uno por uno (que acepte como parámetro una instancia de la clase Person vista en la lección). Este solo debe agregar pasajeros si lleva menos de su máximo. Sino, debe mostrar un mensaje de que el bus está lleno.
 #Un método para bajar pasajeros uno por uno (en cualquier orden).
-
 
 class Person:
 
@@ -37,6 +35,7 @@ class Bus:
         self.max_passengers = 8
         self.passengers = []
 
+
     def add_passenger(self, person):
 
         if len(self.passengers) < self.max_passengers:
@@ -44,6 +43,7 @@ class Bus:
             print(f"{person.name} subió al bus.")
         else:
             print("El bus está lleno.")
+
 
     def let_passenger_off(self):
 
@@ -119,9 +119,11 @@ class Torso:
         self.right_leg=right_leg
         self.left_leg=left_leg
 
+
 class Head:
     def __init__(self):
         pass
+
 
 class Hand:
     def __init__(self):
@@ -131,10 +133,12 @@ class Hand:
 class Arm:
     def __init__(self,hand):
         self.hand=hand
+    
         
 class Feet:
     def __init__(self):
         pass
+
 
 class Leg:
     def __init__(self,foot):
