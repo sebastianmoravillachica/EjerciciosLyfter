@@ -29,11 +29,11 @@ try:
     width=float(input("Ingrese el ancho: ").strip())
     height=float(input("Ingrese la altura: ").strip())
     
-    rectangle_1=Rectangle()
+    rectangle_1=Rectangle(width,height)
 
-    print(rectangle_1.get_area(width,height))
+    print(rectangle_1.get_area())
 
-    print(rectangle_1.get_perimeter(width,height))
+    print(rectangle_1.get_perimeter())
 except ValueError as error:
     print(error)
 
