@@ -1,3 +1,5 @@
+from abc import ABC,abstractmethod
+import math
 #1.Cree una clase de BankAccount que:
 #Tenga un atributo de balance.
 #Tenga un método para ingresar dinero.
@@ -21,7 +23,7 @@ class BankAccount:
         return f"Depósito realizado con éxito. Balance actual: {self.balance}"
 
     def _withdraw_money(self, amount):
-
+        
         if amount < 0:
             return "La cantidad a retirar no puede ser un número negativo"
 
@@ -39,14 +41,13 @@ class SavingsAccount(BankAccount):
         self.min_balance = min_balance
 
     def _withdraw_money(self, amount):
-
-        if self.balance - amount < self.min_balance:
-            return (
-                f"No se puede retirar esa cantidad. "
-                f"El balance mínimo es de {self.min_balance}."
-            )
-
-        return super()._withdraw_money(amount)
+        
+            if self.balance - amount < self.min_balance:
+            
+                raise ValueError(f"El balance mínimo es de {self.min_balance}.")
+            
+            return super()._withdraw_money(amount)
+        
 
 
 account = SavingsAccount(10000, 5000)
@@ -60,8 +61,7 @@ print(account._deposit_money(1000))
 #Ahora cree las siguientes clases que hereden de Shape e implementen esos métodos: Circle, Square y Rectangle.
 #Cada una de estas necesita los atributos respectivos para poder calcular el área y el perímetro.
 
-from abc import ABC,abstractmethod
-import math
+
 class Shape(ABC):
     
     @abstractmethod
