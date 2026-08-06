@@ -11,27 +11,27 @@ class Employee:
     
     def __init__(self, name, salary):
         
-        self.__name=name
-        self.__salary=salary
+        self._name=name
+        self._salary=salary
         
     @property
     def name(self):
         
-        return self.__name
+        return self._name
     
     
     @property
     def salary(self):
             
-        return self.__salary
+        return self._salary
     
     @name.setter
     def name(self,new_name):
         if new_name =="":
             raise ValueError("El nombre no puede estar vacío.")
         
-        self.__name = new_name
-    
+        self._name = new_name
+        
     @salary.setter
     def salary(self, new_salary):
         
@@ -39,7 +39,7 @@ class Employee:
             
             raise ValueError("El salario no puede ser un numero negativo.")
         
-        self.__salary = new_salary
+        self._salary = new_salary
         
     
     def promote(self,percentage_increase):
@@ -89,9 +89,7 @@ class AdminUser(User):
     
     def has_permission(self, permission):
         
-        if permission:
-            
-            return True
+        return True
         
 
 class RegularUser(User):
@@ -130,7 +128,7 @@ class Vehicle:
         
     def  get_info(self):
         
-        return (f"El vehiculo marca {self._brand} es del año {self._year}")
+        return (f"{self._brand} ({self._year})")
     
 class Car(Vehicle):
     
@@ -140,7 +138,7 @@ class Car(Vehicle):
         
     def  get_info(self):
             
-            return (f"{super().get_info()} y es un vehiculo de tipo {self.car_type}")
+            return (f"{super().get_info()} - Tipo: {self.car_type}")
     
 class Motorcycle(Vehicle):
     
@@ -150,7 +148,7 @@ class Motorcycle(Vehicle):
             
     def  get_info(self):
                 
-        return (f"{super().get_info()} y tiene un motor de {self.engine_cc } cc")
+        return (f"{super().get_info()} - Motor: {self.engine_cc } cc")
 
 vehicle1 = Car("Toyota", 2020, "Todoterreno")
 vehicle2 = Motorcycle("Yamaha", 2022, 650)
