@@ -6,7 +6,6 @@ from datetime import datetime
 #"Hola, Jeanca"
 #"Hola, Jeanca"
 
-
 def repeat_twice(func):
 
     def wrapper(name):
@@ -83,7 +82,7 @@ def validate_numbers(func):
             
             if not isinstance(arg,(int,float)):
                 
-                print(f"{arg} no es un numero")
+                raise ValueError(f"{arg} no es un numero")
 
         result=func(*args)
             
@@ -98,8 +97,10 @@ def log_call(func):
         result = func(*args)
 
         current_date = datetime.now()
+        
+        arguments=",".join(str(arg) for arg in args)
 
-        print(f"func:{func.__name__} - args: {args} - [{current_date}] - {result}")
+        print(f"func:{func.__name__} - args: {arguments} - [{current_date}] - {result}")
         
 
         return result
