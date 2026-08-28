@@ -227,6 +227,11 @@ class BinaryTree:
         
     def postorder (self, node):
         
+        
+        if node is None:
+            
+            return
+        
         self.postorder(node.left) # Left
         
         self.postorder(node.right) # Right
