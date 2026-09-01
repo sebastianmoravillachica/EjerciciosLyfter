@@ -25,61 +25,56 @@
 #     B -> C
 
 
-class Node:
-    
-    data:str
-    next="Node"
-    
+class QueueNode:
+
     def __init__(self, data, next=None):
-        
-        self.data=data
-        self.next=next
+        self.data = data
+        self.next = next
+
+
 class Queue:
-    
+
     def __init__(self):
-        self.head=None
-    
-    def enqueue(self, data): #ingresar datos 
-        
-        new_node=Node(data)
-        
+        self.head = None
+
+    def enqueue(self, data):
+        new_node = QueueNode(data)
+
         if self.head is None:
-            
-            self.head=new_node
+            self.head = new_node
             return
-        
-        else:
-            
-            current_node=self.head
-            
-            while current_node.next is not None:
-                
-                current_node=current_node.next
-                
-            current_node.next=new_node
-    
-    def dequeue(self): #eliminar datos
-        
+
+        current_node = self.head
+
+        while current_node.next is not None:
+            current_node = current_node.next
+
+        current_node.next = new_node
+
+    def dequeue(self):
         if self.head is None:
-                    
-            print("La fila esta vacia")
+            print("La cola está vacía")
             return
-        
-        removed_head=self.head.data
-        
-        self.head= self.head.next
-        
+
+        removed_head = self.head.data
+        self.head = self.head.next
+
         return removed_head
-    
+
     def print_all(self):
-        
-        current_node=self.head
-        
+        current_node = self.head
+        result = ""
+
         while current_node is not None:
-            
-            print(current_node.data)
-            
-            current_node=current_node.next
+            result += str(current_node.data)
+
+            if current_node.next is not None:
+                result += " -> "
+
+            current_node = current_node.next
+
+        print(result)
+
 
 q = Queue()
 
@@ -126,10 +121,7 @@ q.print_all()
 #     ll.print_all() #20 -> 30
 
 
-class Node:
-
-    data: int
-    next: "Node"
+class LinkedListNode:
 
     def __init__(self, data, next=None):
         self.data = data
@@ -138,22 +130,17 @@ class Node:
 
 class LinkedList:
 
-    head: Node
-
     def __init__(self):
         self.head = None
 
-    def print_all(self):
+    def insert_front(self, data):
+        new_node = LinkedListNode(data)
 
-        current_node = self.head
+        new_node.next = self.head
+        self.head = new_node
 
-        while current_node is not None:
-            print(current_node.data)
-            current_node = current_node.next
-
-    def insert_back(self, adding_number):
-
-        new_node = Node(adding_number)
+    def insert_back(self, data):
+        new_node = LinkedListNode(data)
 
         if self.head is None:
             self.head = new_node
@@ -166,62 +153,52 @@ class LinkedList:
 
         current_node.next = new_node
 
-    def delete(self, number):
-
+    def delete(self, data):
         current_node = self.head
         previous_node = None
 
         while current_node is not None:
 
-            if current_node.data == number:
+            if current_node.data == data:
 
-                # Si estamos eliminando el HEAD
                 if previous_node is None:
                     self.head = current_node.next
                     return
 
-                # Si estamos eliminando cualquier otro nodo
                 previous_node.next = current_node.next
                 return
 
             previous_node = current_node
             current_node = current_node.next
 
-        print(f"El número {number} no existe en la lista")
+        print(f"El valor {data} no existe en la lista")
 
-    def insert_front(self, adding_number):
+    def print_all(self):
+        current_node = self.head
+        result = ""
 
-        new_node = Node(adding_number)
-        new_node.next = self.head
-        self.head = new_node
+        while current_node is not None:
+            result += str(current_node.data)
+
+            if current_node.next is not None:
+                result += " -> "
+
+            current_node = current_node.next
+
+        print(result)
 
 
 ll = LinkedList()
 
-print("Insertando al frente:")
 ll.insert_front(10)
 ll.insert_front(20)
-ll.insert_front(30)
+ll.insert_back(30)
+
 ll.print_all()
 
-print("\nInsertando al final:")
-ll.insert_back(40)
-ll.print_all()
-
-print("\nEliminando 20:")
 ll.delete(20)
-ll.print_all()
 
-print("\nEliminando el primero:")
-ll.delete(30)
 ll.print_all()
-
-print("\nEliminando el último:")
-ll.delete(40)
-ll.print_all()
-
-print("\nIntentando eliminar un número que no existe:")
-ll.delete(100)
 
 
 # 3. Lista doblemente enlazada
@@ -258,11 +235,7 @@ ll.delete(100)
 #     print_forward()  #→ X -> A -> C
 #     print_backward() #← C -> A -> X
 
-class Node:
-
-    data: int
-    next: "Node"
-    previous: "Node"
+class DoublyNode:
 
     def __init__(self, data, next=None, previous=None):
         self.data = data
@@ -276,9 +249,20 @@ class DoublyLinkedList:
         self.head = None
         self.tail = None
 
-    def append(self, data):
+    def prepend(self, data):
+        new_node = DoublyNode(data)
 
-        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+            return
+
+        new_node.next = self.head
+        self.head.previous = new_node
+        self.head = new_node
+
+    def append(self, data):
+        new_node = DoublyNode(data)
 
         if self.head is None:
             self.head = new_node
@@ -290,14 +274,12 @@ class DoublyLinkedList:
         self.tail = new_node
 
     def delete(self, data):
-
         current_node = self.head
 
         while current_node is not None:
 
             if current_node.data == data:
 
-                # Si estamos eliminando el HEAD
                 if current_node is self.head:
                     self.head = current_node.next
 
@@ -308,13 +290,11 @@ class DoublyLinkedList:
 
                     return
 
-                # Si estamos eliminando el TAIL
                 if current_node is self.tail:
                     self.tail = current_node.previous
                     self.tail.next = None
                     return
 
-                # Si estamos eliminando un nodo del medio
                 current_node.previous.next = current_node.next
                 current_node.next.previous = current_node.previous
 
@@ -322,20 +302,45 @@ class DoublyLinkedList:
 
             current_node = current_node.next
 
-        print(f"El número {data} no existe en la lista")
+        print(f"El valor {data} no existe en la lista")
 
     def print_forward(self):
-
         current_node = self.head
 
         while current_node is not None:
-            print(current_node.data)
+            print(current_node.data, end="")
+
+            if current_node.next is not None:
+                print(" -> ", end="")
+
             current_node = current_node.next
 
-    def print_backward(self):
+        print()
 
+    def print_backward(self):
         current_node = self.tail
 
         while current_node is not None:
-            print(current_node.data)
+            print(current_node.data, end="")
+
+            if current_node.previous is not None:
+                print(" -> ", end="")
+
             current_node = current_node.previous
+
+        print()
+
+
+dll = DoublyLinkedList()
+
+dll.append("B")
+dll.append("C")
+dll.prepend("A")
+
+dll.print_forward()
+dll.print_backward()
+
+dll.delete("B")
+
+dll.print_forward()
+dll.print_backward()
