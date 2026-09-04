@@ -71,12 +71,12 @@ def second_bubble_sort(list_to_sort):
             return
 
 
-my_seond_test_list = [5, 3, 4, 1, 2]
+my_second_test_list = [5, 3, 4, 1, 2]
 
 print("Lista antes:")
-print(my_seond_test_list)
+print(my_second_test_list)
 
-second_bubble_sort(my_seond_test_list)
+second_bubble_sort(my_second_test_list)
 
 print("Lista después:")
-print(my_seond_test_list)
+print(my_second_test_list)
