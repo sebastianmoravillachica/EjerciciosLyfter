@@ -14,7 +14,7 @@ def manual_add(number): #O(1)
     
 def add_formula(number): #O(1)
     
-    return number * (number+1) // 2 # O(log N)
+    return number * (number+1) // 2 # O(1)
     
 
 # Preguntas:
@@ -31,23 +31,22 @@ def add_formula(number): #O(1)
 
 # 2.Considere los siguientes dos algoritmos:
 
-def linear_search(my_list, target): # O(1)
-    for item in my_list: #O(N)
-        if item == target: # O(1)
-            return True # O(1)
-    return False # O(1)
-
-def binary_search(my_list, target): # O(1)
+def binary_search(my_list, target):  # O(1)
     low = 0 # O(1)
     high = len(my_list) - 1 # O(1)
-    while low <= high: #O(N)
+
+    while low <= high: # O(log N)
         mid = (low + high) // 2 # O(1)
+
         if my_list[mid] == target: # O(1)
-            return True # O(1)
-        elif my_list[mid] < target: # O(1)
-            low = mid + 1 # O(1)
-        else: # O(1)
-            high = mid - 1 # O(1)
+            return True
+
+        elif my_list[mid] < target:# O(1)
+            low = mid + 1  # O(1)
+
+        else:
+            high = mid - 1  # O(1)
+
     return False # O(1)
 
 
