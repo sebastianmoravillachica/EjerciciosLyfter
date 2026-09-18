@@ -2,7 +2,7 @@ from bubble_sort import bubble_sort
 from ejercicios_funciones_python_basico import sum_list,reverse_text,check_text,create_list,find_prime_numbers
 import pytest
 import random
-"""
+
 # 1.Cree los siguientes unit tests para el algoritmo bubble_sort:
 # Funciona con una lista pequeña.
 # Funciona con una lista grande (de más de 100 elementos.)
@@ -67,11 +67,11 @@ def test_bubble_sort_if_not_list():
     
     with pytest.raises(TypeError):
         bubble_sort(list_to_sort)
-"""
+
 # 2.Cree unit tests para probar 3 casos de éxito distintos de cada uno de los ejercicios de funciones (exceptuando el 1 y 2). Enlace:
 
 #SUM_LIST
-"""
+
 def test_sum_all_numbers_of_a_list():
     
     #AAA
@@ -110,8 +110,7 @@ def test_sum_all_number_of_a_list_with_big_numbers():
     result=sum_list(list_to_sum)
     
     assert result == 9500
-"""
-"""
+
 #REVERSE_TEXT
 
 def test_reverse_small_text():
@@ -149,8 +148,7 @@ def test_reverse_text_with_number_and_special_characters():
     result=reverse_text(text_with_number_and_characters)
     
     assert result == "!321nohtyP"
-"""
-"""
+
 #check_text
 
 def test_check_lowercase_and_uppercase_in_a_text(capsys):
@@ -205,8 +203,7 @@ def test_check_with_special_characters_in_a_text(capsys):
     
     
     assert capture.out == f"El texto es ({text_with_special_character}) y tiene una cantidad de minusculas de 5 y de mayusculas 1\n"
-"""
-"""
+
 #create_list
 
 def test_sort_small_text():
@@ -251,7 +248,7 @@ def test_check_text_already_sorted():
     
     assert result=="arbol-casa-zebra"
 
-"""
+
 
 #find_prime_numbers
 
