@@ -1,0 +1,9 @@
+[
+    {
+        "title": "Pago del mes",
+        "amount": 500000.0,
+        "category": "Salario",
+        "type_movement": "Ingreso",
+        "date": "27/09/2026"
+    }
+]
