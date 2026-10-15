@@ -1,0 +1,157 @@
+{
+  "info": {
+    "_postman_id": "c129a290-8c01-4666-b0a6-c4ed2393df8e",
+    "name": "My Collection",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58774760",
+    "_collection_link": "https://go.postman.co/collection/58774760-c129a290-8c01-4666-b0a6-c4ed2393df8e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "restful-api.dev",
+      "item": [
+        {
+          "name": "Get_item_by_ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.restful-api.dev/objects?id=ff808181a09d98f701a13348a64a4f91&id=1",
+              "protocol": "https",
+              "host": [
+                "api",
+                "restful-api",
+                "dev"
+              ],
+              "path": [
+                "objects"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "ff808181a09d98f701a13348a64a4f91"
+                },
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add_PlayStation",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"PlayStation5\",\r\n    \"data\":{\r\n        \"realase_year\": 2020,\r\n        \"storage\": \"1 TB\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.restful-api.dev/objects",
+              "protocol": "https",
+              "host": [
+                "api",
+                "restful-api",
+                "dev"
+              ],
+              "path": [
+                "objects"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Updating_model_and_storage",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"PlayStation4\",\r\n    \"data\":{\r\n        \"storage\":\"500 GB\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.restful-api.dev/objects/ff808181a09d98f701a1333fbdd04f5b",
+              "protocol": "https",
+              "host": [
+                "api",
+                "restful-api",
+                "dev"
+              ],
+              "path": [
+                "objects",
+                "ff808181a09d98f701a1333fbdd04f5b"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updating_storage",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"data\":{\"storage\":\"1 TB\"}\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api.restful-api.dev/objects/ff808181a09d98f701a1333fbdd04f5b",
+              "protocol": "https",
+              "host": [
+                "api",
+                "restful-api",
+                "dev"
+              ],
+              "path": [
+                "objects",
+                "ff808181a09d98f701a1333fbdd04f5b"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete_item_by_id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://api.restful-api.dev/objects/ff808181a09d98f701a1333fbdd04f5b",
+              "protocol": "https",
+              "host": [
+                "api",
+                "restful-api",
+                "dev"
+              ],
+              "path": [
+                "objects",
+                "ff808181a09d98f701a1333fbdd04f5b"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
