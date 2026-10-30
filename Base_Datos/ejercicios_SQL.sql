@@ -1,3 +1,4 @@
+-- SQLite
 
 
 --- CREACION DE TABLAS ---
@@ -24,9 +25,10 @@ CREATE TABLE invoices(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     invoice_number INT NOT NULL UNIQUE,
     purchase_date DATE NOT NULL,
-    total_amount INT DEFAULT 0,
-    user_id INTEGER REFERENCES user(id)
+    total_amount DECIMAL(10,2) DEFAULT 0,
+    user_id INTEGER REFERENCES users(id)
 );
+
 
 CREATE TABLE products_per_invoice(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -142,3 +144,20 @@ SELECT * FROM invoices ORDER BY total_amount DESC;
 SELECT * FROM invoices where invoice_number =1234567890;
 
 
+--- COMANDOS QUE UTILIZA PARA SOLUCIONAR LOS ERRORES
+
+ALTER TABLE user RENAME TO users
+
+DROP TABLE invoices;
+
+
+CREATE TABLE invoices(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    invoice_number INT NOT NULL UNIQUE,
+    purchase_date DATE NOT NULL,
+    total_amount DECIMAL(10,2) DEFAULT 0,
+    user_id INTEGER REFERENCES users(id)
+);
+
+
+SELECT * FROM products_per_invoice where invoice_id = 3;
