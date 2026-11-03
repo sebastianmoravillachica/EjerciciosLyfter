@@ -12,7 +12,7 @@ CREATE TABLE products (
 );
 
 
-CREATE TABLE user(
+CREATE TABLE users(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     full_name VARCHAR(150) NOT NULL,
     email VARCHAR(254) NOT NULL UNIQUE,
@@ -32,7 +32,7 @@ CREATE TABLE invoices(
 CREATE TABLE products_per_invoice(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     quantity INT NOT NULL DEFAULT 0,
-    total_amount INT DEFAULT 0,
+    total_amount DECIMAL(10,2) DEFAULT 0,
     product_id INTEGER REFERENCES products(id),
     invoice_id INTEGER REFERENCES invoices(id)
 );
@@ -131,7 +131,7 @@ SELECT * FROM products;
 
 SELECT * FROM products where price > 50000;
 
-SELECT * FROM products_per_invoice where invoice_id = 3;
+SELECT * FROM products_per_invoice where product_id = 3;
 
 SELECT product_id, SUM(quantity) AS total_purchased FROM products_per_invoice
 GROUP BY product_id;
@@ -141,22 +141,3 @@ SELECT * from invoices where user_id = 2;
 SELECT * FROM invoices ORDER BY total_amount DESC;
 
 SELECT * FROM invoices where invoice_number =1234567890;
-
-
---- COMANDOS QUE UTILIZA PARA SOLUCIONAR LOS ERRORES
-
-ALTER TABLE user RENAME TO users
-
-DROP TABLE invoices;
-
-
-CREATE TABLE invoices(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    invoice_number INT NOT NULL UNIQUE,
-    purchase_date DATE NOT NULL,
-    total_amount DECIMAL(10,2) DEFAULT 0,
-    user_id INTEGER REFERENCES users(id)
-);
-
-
-SELECT * FROM products_per_invoice where invoice_id = 3;
