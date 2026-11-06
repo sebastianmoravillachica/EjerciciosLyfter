@@ -51,7 +51,7 @@ SELECT * FROM products;
 
 SELECT * FROM products WHERE price>50000;
 
-SELECT * FROM products WHERE name LIKE "apple";
+SELECT * FROM products WHERE name LIKE "%apple%";
 
 SELECT * FROM products ORDER BY price DESC LIMIT 5;
 
