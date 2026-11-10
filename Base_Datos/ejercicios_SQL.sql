@@ -78,7 +78,7 @@ VALUES
     (1002, 'Mouse', 15000.00, '2026-10-05', 'Logitech', 40);
 
 
-INSERT INTO user
+INSERT INTO users
     (full_name, email, registration_date)
 VALUES
     ('Carlos Ramirez', 'carlos@example.com', '2026-09-01'),
