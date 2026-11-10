@@ -81,7 +81,7 @@ VALUES
 INSERT INTO users
     (full_name, email, registration_date)
 VALUES
-    ('Carlos Ramirez', 'carlos@example.com', '2026-09-01'),
+    ('Carlos Ramirez', 'carlos@example.com', '2026-09-01'), 
     ('Maria Fernandez', 'maria@example.com', '2026-09-10');
 
 INSERT INTO invoices
